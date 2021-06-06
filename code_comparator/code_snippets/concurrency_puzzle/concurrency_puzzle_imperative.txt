@@ -1,0 +1,35 @@
+ArrayList<ArrayList<Integer>> arr_a = getArray();
+ArrayList<ArrayList<Integer>> arr_b = getArray();
+ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+
+System.out.println("Array a");
+printArrayList(arr_a);
+
+System.out.println("Array b");
+printArrayList(arr_b);
+	
+int rows = arr_b.size();
+int cols = arr_a.size();
+
+MultiplyThread[] threads = new MultiplyThread[rows];
+
+for (int rowNr = 0; rowNr < rows; rowNr++) 
+{
+  threads[rowNr] = new MultiplyThread(rowNr, arr_a,arr_b);
+}
+
+for(int i = 0; i < rows; i++)
+{
+  try 
+  {
+    threads[i].join();
+    result.add(threads[i].getResult());
+  } 
+  catch (Exception e) 
+  {
+    e.printStackTrace();
+  }
+}
+
+System.out.println("Result");
+printArrayList(result);

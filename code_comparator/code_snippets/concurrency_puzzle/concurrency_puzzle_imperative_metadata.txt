@@ -1,0 +1,8 @@
+You are given two matrices in the form of two-dimensional 3 * 3 size ArrayLists containing integers (arr_a and arr_b).
+The program should multiply these matrices in several threads and merge the results into one matrix.
+The current program does not print a result. Locate and correct the error.
+
+- The program makes use of the class MultiplyThread. MultiplyThread's constructor takes the number of the row to be multiplied, where 0 is the first number, and two matrices (in the form of ArrayLists) as arguments.
+
+- MultiplyThread extends the Thread class which allows concurrent use of threads. Thread and MultiplyThread are started using Thread.start(). After calling Thead.start(), the actual calculation is performed. The main thread waits for the independent threads to stop using Thread.join();
+The result of MultiplyThread's calculation are fetched using getResult();

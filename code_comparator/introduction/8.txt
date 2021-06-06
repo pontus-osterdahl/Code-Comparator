@@ -1,0 +1,21 @@
+Observable.create(emitter ->
+{
+  int a = 5 / 0; // division by zero will generate error
+
+  emitter.onNext(a);
+})
+.count()
+.subscribe(e -> System.out.println("No error"),
+  e -> System.out.println("Error")); // second position handles error
+
+Observable.create(emitter ->
+{
+  System.out.println("Attempting to divide by zero, will generate error");
+
+  int a = 5 / 0;
+
+  emitter.onNext(a);
+})
+.retry(2)
+.subscribe(System.out::println,
+  e -> System.out.println("Error thrown at last"));

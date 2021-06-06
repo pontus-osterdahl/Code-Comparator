@@ -1,0 +1,41 @@
+// Observable takes string as data source. Emission is printed after
+// subscription.
+Observable<String> justObservable = Observable.just("Observable");
+
+System.out.println("Emission of justObservable:");
+justObservable.subscribe(System.out::println);
+
+System.out.println();
+
+
+// Observable created using create
+Observable<String> createObservable = Observable.create(emitter ->
+{
+  emitter.onNext("Hello World");
+
+  emitter.onComplete();
+});
+
+System.out.println("Emission of createObservable:");
+createObservable.subscribe(System.out::println);
+
+System.out.println();
+
+
+// Observable created using fromArray
+String[] strings = {"String1", "String2", "String3"};
+
+Observable<String> arrayObservable = Observable.fromArray(strings);
+
+System.out.println("Emission of arrayObservable:");
+arrayObservable.subscribe(System.out::println);
+
+System.out.println();
+
+
+// Observable created using fromIterable
+Observable<String> iterableObservable =
+  Observable.fromIterable(Arrays.asList(strings));
+
+System.out.println("Emission of iterableObservable:");
+iterableObservable.subscribe(System.out::println);

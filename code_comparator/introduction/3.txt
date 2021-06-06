@@ -1,0 +1,11 @@
+try
+{
+  // Division by zero is not allowed in Java
+  // Should throw exception
+  int a = 5 / 0;
+}
+
+catch(Exception e)
+{
+  System.out.println("I am printed if exception was thrown");
+}

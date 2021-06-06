@@ -1,0 +1,19 @@
+final String DB_DRIVER = "com.mysql.jdbc.Driver";  
+final String DB_URL = "jdbc:mysql://localhost/";
+final String UPDATE_QUERY = "update person set date_of_birth = ?";
+		
+BiFunction<String, Connection,java.sql.PreparedStatement> max = (query,database)->  
+{
+    Try<java.sql.PreparedStatement> stmt = Try.of(() -> database.prepareStatement(query)).
+        onFailure(e -> {System.out.println(e.getMessage());});
+						
+    if(!stmt.isFailure())
+    {
+	return stmt.get();
+    }
+    return null;
+}; {}
+	    
+
+Try.run(() -> max.apply(UPDATE_QUERY,DriverManager.getConnection(DB_URL, "root", "")).executeUpdate()).
+    onFailure(e -> {System.out.println(e.getMessage());});

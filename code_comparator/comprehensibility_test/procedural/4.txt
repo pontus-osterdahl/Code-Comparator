@@ -1,0 +1,24 @@
+ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+MultiplyThread[] threads = new MultiplyThread[ROWS];
+
+for (int rowNr = 0; rowNr < COLS; rowNr++) 
+{
+  threads[rowNr] = new MultiplyThread(rowNr, MATRIX_A,MATRIX_B);
+}
+
+for(int i = 0; i < ROWS; i++)
+{
+  try 
+  {
+    threads[i].join();
+    result.add(threads[i].getResult());
+  }
+  
+  catch (Exception e) 
+  {
+    e.printStackTrace();
+  }
+}
+
+System.out.println("Result:");
+printArrayList(result);

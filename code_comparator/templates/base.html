@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+  <head>
+
+    <meta charset = "utf-8">
+
+    <title>Code Comparator</title>
+
+    {% block stylesheet %}{% endblock stylesheet %}
+
+    {% block scripts %}{% endblock scripts %}
+
+  </head>
+
+  <body>
+
+    <header>
+      {% block header %}
+      <h1>Code Comparator - {% block title %}{% endblock title %}</h1>
+      {% endblock header %}
+    </header>
+
+    {% block content %}{% endblock content %}
+
+  </body>
+
+</html>

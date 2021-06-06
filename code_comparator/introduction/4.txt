@@ -1,0 +1,22 @@
+// Extension of Thread class
+DemoThread thread1 = new DemoThread();
+DemoThread thread2 = new DemoThread();
+
+// We start threads
+thread1.start();
+thread2.start();
+
+System.out.println("Threads not necessarily finished");
+
+try
+{
+  thread1.join();
+  thread2.join();
+}
+
+catch(Exception e)
+{
+  System.out.println("Something went wrong");
+}
+
+System.out.println("Threads are finished");

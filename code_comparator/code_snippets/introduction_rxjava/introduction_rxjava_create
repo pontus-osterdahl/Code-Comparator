@@ -1,0 +1,30 @@
+//RxJava is built around observables and observers.
+//An onbservable is an object. The state of the observable can be notified to an observer.
+//Typically the observer subscribes to the observable which emits items to the observer.
+
+//An Observable is created using operators such as just, fromArray and create
+
+Observable<String> observable = Observable.just("Hello");
+
+//The observer subscribes to the observable using subscribe
+observable.subscribe(System.out::println);
+
+//To create an observable taking an array as its data source, we may use the operator fromArray.
+String[] strings = {"1", "2", "3", "4", "5"};
+
+Observable.fromArray(strings).
+subscribe(System.out::println);
+
+//To create an observable from an iterable data source we may use fromIterable
+
+
+
+//To create an Observable from a function we may use the operator create
+
+Observable<String> createObserver = Observable.create(emitter ->
+{
+    emitter.onNext("Hello World");
+    emitter.onComplete();
+});
+
+createObserver.subscribe(System.out::println);

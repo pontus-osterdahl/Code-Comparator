@@ -1,0 +1,22 @@
+Observable
+.range(0, ROWS)
+.concatMap(nr -> Observable.just(nr)
+  .map(rowNr -> multiplyRow(rowNr, MATRIX_A, MATRIX_B)))
+.subscribeOn(Schedulers.computation())
+.toList()
+.subscribe(result ->
+{
+  System.out.println("Result");
+  printArrayList(result);
+});
+
+//Makes main thread wait for threads above to finish
+try
+{
+  Thread.sleep(1000);
+}
+
+catch(Exception e)
+{
+  e.printStackTrace();
+}

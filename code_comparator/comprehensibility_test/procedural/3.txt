@@ -1,0 +1,33 @@
+BufferedReader br = null;
+String line = "";
+int sum = 0;
+
+try
+{
+  br = new BufferedReader(new FileReader(new File(FILE_PATH)));
+}
+
+catch(Exception e)
+{
+  System.out.println("Error encountered creating BufferedReader");
+}
+
+try
+{
+  while ((line = br.readLine()) != null) 
+  {
+    String[] words = line.split("");
+
+    for(int i = 0; i < words.length; i++)
+    {
+      sum += Integer.valueOf(words[i]);
+    }
+  }
+}
+
+catch(Exception e)
+{
+  System.out.println("Error encountered parsing integers from file");
+}
+
+System.out.println("Sum is: " + sum);

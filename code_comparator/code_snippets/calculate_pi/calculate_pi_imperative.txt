@@ -1,0 +1,29 @@
+int threadCount = 4;
+int n = 100000;
+double pi = 0;
+
+PiThread[] threads = new PiThread[threadCount];
+for (int i = 0; i < threadCount; i++) 
+{
+  threads[i] = new PiThread(threadCount, i, n);
+  threads[i].start();
+}
+
+for (int i = 0; i < threadCount; i++) 
+{
+  try 
+  {
+    threads[i].join();
+  } 
+  catch (Exception e) 
+  {
+    e.printStackTrace();
+  }
+}
+		        
+for (int i = 0; i < threadCount; i++) 
+{
+  pi += threads[i].getSum();
+}
+
+System.out.print("PI = " + pi * 4);

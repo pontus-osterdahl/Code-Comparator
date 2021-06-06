@@ -1,0 +1,11 @@
+
+You are given two matrices in the form of two-dimensional ArrayLists (arr_a and arr_b).
+The program should multiply these matrice in several threads and merge the results into one matrix.
+The current program does not print a result. Locate and correct the error.
+
+- RxJava Operators
+The program makes use of several RxJava operators, `range(a,b)` emits b incrementing values beginning with a.
+`concatMap`is similat to flatmap but emits sequentially according to when its data sources arrive (this is not guaranteed for flatMap).
+
+- Thread.sleep(ms)
+Forces Thread to wait for other threads for ms milliseconds. In simple programs it will be necessary to wait for all threads to finish.

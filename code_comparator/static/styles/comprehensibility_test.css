@@ -1,0 +1,89 @@
+/* Sets the style for the whole web page. */
+html
+{
+  /* Sets the background color. */
+  background-color: cornflowerblue;
+}
+
+/* Sets the h1 style to make it work with markdown. */
+h1
+{
+  /* Sets a large font size. */
+  font-size: 2em;
+}
+
+/* Sets the style for the column container section. */
+#column_container
+{
+  /* Lays out the content according to the grid model. */
+  display: grid;
+
+  /* Defines the columns. */
+  grid-template-columns: 1fr 1fr;
+
+  /* Sets the space between the columns. */
+  grid-gap: 20px;
+}
+
+/* Sets the style for textarea elements. */
+textarea
+{
+  /* Removes the resize symbol. */
+  resize: none;
+
+  /* Sets the font family. */
+  font-family: monospace;
+
+  /* Sets the font size. */
+  font-size: medium;
+}
+
+/* Sets the style for the code snippet area. */
+#code_snippet_area
+{
+  /* Sets the width in number of characters. */
+  width: 90ch;
+  
+  /* Sets the height in number of characters. */
+  height: 60ch;
+}
+
+/* Sets the style for the result snippet area. */
+#information_area
+{
+  /* Sets the width in number of characters. */
+  width: 80ch;
+
+  /* Sets the height in number of characters. */
+  height: 30ch;
+
+  /* Provides scrollbars if content overflows. */
+  overflow: auto;
+
+ /* Sets the background color. */
+  background-color: white;
+}
+
+/* Sets the style for the result area. */
+#result_area
+{
+  /* Sets the width in number of characters. */
+  width: 80ch;
+  
+  /* Sets the height in number of characters. */
+  height: 25ch;
+}
+
+/* Sets the style for buttons. */
+button
+{
+  /* Adds a top margin. */
+  margin-top: 30px;
+}
+
+/* Sets the style for the finish button. */
+#finish_button
+{
+  /* Adds a margin to the left. */
+  margin-left: 200px;
+}

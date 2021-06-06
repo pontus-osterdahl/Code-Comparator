@@ -1,0 +1,15 @@
+System.out.println("Requested URL: " + URL_STRING);
+
+Observable
+.just(URL_STRING)
+.map(url -> new URL(url))
+.map(url -> url.openConnection())
+.doOnNext(urlConnection ->
+{
+  System.out.println("Requesting...");
+  urlConnection.connect();
+})
+.retry(0)
+.subscribe(c -> System.out.println(c.getURL() +
+  " was successfully called"),
+  e -> System.out.println("Could not establish connection"));

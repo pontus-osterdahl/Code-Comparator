@@ -1,0 +1,4 @@
+Observable.fromIterable(MATRIX)
+.flatMapIterable(matrixList -> matrixList)
+.reduce((x, y) -> y)
+.subscribe(e -> System.out.println("Sum is: " + e));

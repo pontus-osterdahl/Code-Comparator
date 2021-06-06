@@ -1,0 +1,26 @@
+/* Sets the style for the whole web page. */
+html
+{
+  /* Sets the background color. */
+  background-color: cornflowerblue;
+}
+
+/* Sets the style for the survey form. */
+#survey_form
+{
+  /* Displays as a block element with surrounding content flowing around it. */
+  display: inline-block;
+
+  /* Adds padding around the element. */
+  padding: 2em;
+
+  /* Sets the background color. */
+  background-color: lightgray;
+}
+
+/* Sets the style for the submit button. */
+#submit_button
+{
+  /* Adds a top margin. */
+  margin-top: 2em;
+}

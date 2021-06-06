@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+
+  <link rel="stylesheet"
+    href="{{url_for('static', filename='styles/introduction.css') }}">
+
+{% endblock stylesheet %}
+
+{% block scripts %}
+
+  <script type=text/javascript src="{{url_for('static',
+    filename='scripts/ace/ace.js') }}"></script>
+
+  <script type=text/javascript src="{{url_for('static',
+    filename='scripts/introduction.js') }}"></script>
+
+{% endblock scripts %}
+
+
+{% block title %}Introduction{% endblock title %}
+
+{% block content %}
+
+  <section id="column_container">
+
+    <section id="column_one">
+
+      <p><strong>Code snippet</strong></p>
+      
+      <form method="POST">
+
+        <div id="code_snippet_area" name="code_snippet_area">{{
+          request.form['code_snippet_area'] or code_snippet }}</div>
+
+        <button id="execute_button" type="button">EXECUTE</button>
+
+        <input id="start_comprehensibility_test_button" type="submit"
+          name="start_comprehensibility_test"
+          value="START THE COMPREHENSIBILITY TEST">
+
+      </form>
+
+    </section>
+    
+
+    <section id="column_two">
+
+      <p><strong>Information</strong></p>
+
+      <div id="information_area">{{ information }}</div>
+
+      <form id="introduction_navigation_form" method="GET">
+
+        <input id="previous_button" type="submit" name="previous_part"
+          value="PREVIOUS">
+
+        <input id="next_button" type="submit" name="next_part" value="NEXT">
+
+      </form>
+
+
+      <p><strong>Result</strong></p>
+
+      <textarea id="result_area" readonly = "true">
+
+      </textarea>
+
+    </section>
+
+  </section>
+
+
+{% endblock content %}

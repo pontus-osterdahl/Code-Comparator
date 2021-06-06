@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+
+  <link rel="stylesheet" href=
+    "{{url_for('static', filename='styles/comprehensibility_test.css') }}">
+
+{% endblock stylesheet %}
+
+{% block scripts %}
+
+  <script type=text/javascript src="{{url_for('static',
+    filename='scripts/ace/ace.js') }}"></script>
+
+  <script type=text/javascript src="{{url_for('static',
+    filename='scripts/comprehensibility_test.js') }}"></script>
+
+{% endblock scripts %}
+
+
+{% block title %}Comprehensibility Test{% endblock title %}
+
+{% block content %}
+
+  <section id="column_container">
+
+    <section id="column_one">
+
+      <p><strong>Code snippet</strong></p>
+      
+      <div id="code_snippet_area" name="code_snippet_area">{{
+        request.form['code_snippet_area'] or code_snippet }}</div>
+
+      <button id="execute_button" type="button">EXECUTE</button>
+
+      <button id="finish_button" type="button">FINISH THIS TEST</button>
+
+    </section>
+    
+
+    <section id="column_two">
+
+      <p><strong>Instructions</strong></p>
+
+      <div id="information_area">{{ information }}</div>
+
+      <p><strong>Result</strong></p>
+
+      <textarea id="result_area" readonly = "true">
+
+      </textarea>
+
+    </section>
+
+  </section>
+
+
+{% endblock content %}

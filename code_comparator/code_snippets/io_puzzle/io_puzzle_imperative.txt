@@ -1,0 +1,33 @@
+
+BufferedReader br = null;
+String filePath = "../code_comparator/building_blocks/grade.txt";
+
+
+try{
+  br = new BufferedReader(new FileReader(new File(filePath)));
+}
+catch(Exception e)
+{
+    System.out.println(e.getMessage());
+}
+
+String line = null;
+
+int sum = 0;
+
+try{
+while ((line = br.readLine()) != null) {
+    
+  String[] words = line.split("");
+  for(int i = 0; i < words.length; i++)
+  {
+    sum += Integer.valueOf(line);
+  }
+}
+}
+catch(Exception e)
+{
+    System.out.println(e.getMessage());
+}
+
+System.out.println("Sum is" + sum);

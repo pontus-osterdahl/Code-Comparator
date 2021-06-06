@@ -1,0 +1,3 @@
+Observable<String> observable = Observable.just("Hello World!");
+
+observable.subscribe(System.out::println);

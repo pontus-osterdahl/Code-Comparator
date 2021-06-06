@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+  <link rel="stylesheet"
+    href="{{url_for('static', filename='styles/survey.css') }}">
+{% endblock stylesheet %}
+
+
+{% block title %}
+  Survey
+{% endblock title %}
+
+
+{% block content %}
+
+<form method="post" id="survey_form">
+
+  <p>Please state your age group:</p>
+
+  <input type="radio" id="below_twenty" name="age_group"
+    value="below_twenty">
+  <label for="below_twenty">Under 20</label>
+
+  <input type="radio" id="twenty_to_thirty" name="age_group"
+    value="twenty_to_thirty">
+  <label for="twenty_to_thirty">20 - 30</label>
+
+  <input type="radio" id="thirty_to_forty" name="age_group"
+    value="thirty_to_forty">
+  <label for="thirty_to_forty">30 - 40</label>
+
+  <input type="radio" id="forty_to_fifty" name="age_group"
+    value="forty_to_fifty" checked>
+  <label for="forty_to_fifty">40 - 50</label>
+
+  <input type="radio" id="fifty_to_sixty" name="age_group"
+    value="fifty_to_sixty">
+  <label for="fifty_to_sixty">50 - 60</label>
+
+  <input type="radio" id="above_sixty" name="age_group"
+    value="above_sixty" checked>
+  <label for="above_sixty">Above 60</label>
+
+  <hr>
+
+  <p>Please state your gender:</p>
+
+  <input type="radio" id="male" name="gender"
+    value="male">
+  <label for="male">Male</label>
+
+  <input type="radio" id="female" name="gender"
+    value="female">
+  <label for="female">Female</label>
+
+  <input type="radio" id="other" name="gender"
+    value="other" checked>
+  <label for="other">Other</label>
+
+  <hr>
+
+  <p>Please state your occupation:</p>
+
+  <input type="radio" id="software_engineer" name="occupation"
+    value="software_engineer">
+  <label for="software_engineer">Software engineer</label>
+
+  <input type="radio" id="mechanical_engineer" name="occupation"
+    value="mechanical_engineer">
+  <label for="mechanical_engineer">Mechanical engineer</label>
+
+  <input type="radio" id="electronics_engineer" name="occupation"
+    value="electronics_engineer">
+  <label for="electronics_engineer">Electronics engineer</label>
+
+  <input type="radio" id="software_engineering_student" name="occupation"
+    value="software_engineering_student">
+  <label for="software_engineering_student">Software engineering student</label>
+
+  <input type="radio" id="other_occupation" name="occupation"
+    value="other_occupation" checked>
+  <label for="other_occupation">Other</label>
+
+
+  <p>Please describe your occupation if you selected 'Other' above:</p>
+
+  <input type="text" id="other_occupation_description"
+    name="other_occupation_description">
+
+
+  <p>For how long have you been in this occupation?</p>
+
+  <input type="radio" id="more_than_ten_years" name="occupation_time"
+    value="more_than_ten_years">
+  <label for="more_than_ten_years">More than ten years</label>
+
+  <input type="radio" id="five_to_ten_years" name="occupation_time"
+    value="five_to_ten_years">
+  <label for="five_to_ten_years">Five to ten years</label>
+
+  <input type="radio" id="one_to_five_years" name="occupation_time"
+    value="one_to_five_years">
+  <label for="one_to_five_years">One to five years</label>
+
+  <input type="radio" id="less_than_one_year" name="occupation_time"
+    value="less_than_one_year" checked>
+  <label for="less_than_one_year">Less than one year</label>
+
+  <hr>
+
+
+  <p>How often are you involved in software development?</p>
+
+  <input type="radio" id="daily" name="software_development_frequency"
+    value="daily">
+  <label for="daily">Daily</label>
+
+  <input type="radio" id="weekly" name="software_development_frequency"
+    value="weekly">
+  <label for="weekly">Weekly</label>
+
+  <input type="radio" id="rarely" name="software_development_frequency"
+    value="rarely">
+  <label for="one_to_five_years">Rarely</label>
+
+  <input type="radio" id="never" name="software_development_frequency"
+    value="never" checked>
+  <label for="never">Never</label>
+
+  <hr>
+
+  <p>Please state your programming experience:</p>
+
+  <input type="radio" id="programming_more_than_five_years"
+    name="programming_experience" value="programming_more_than_five_years">
+  <label for="programming_more_than_five_years">More than five years</label>
+
+  <input type="radio" id="programming_four_to_five_years"
+    name="programming_experience" value="programming_four_to_five_years">
+  <label for="programming_four_to_five_years">Four to five years</label>
+
+  <input type="radio" id="programming_one_to_three_years"
+    name="programming_experience" value="programming_one_to_three_years">
+  <label for="programming_one_to_three_years">One to three years</label>
+
+  <input type="radio" id="programming_less_than_one_year"
+    name="programming_experience" value="programming_less_than_one_year"
+    checked>
+  <label for="programming_less_than_one_year">Less than one year</label>
+
+  <hr>
+
+  <p>
+    If you are a software engineering student, please tick completed courses:
+  </p>
+
+  <input type="checkbox" id="java_course" name="java_course">
+  <label for="java_course">
+    Java introduction, e.g. DT062G Java for C++ Programmers
+  </label>
+
+  <input type="checkbox" id="rxjava_course" name="rxjava_course">
+  <label for="rxjava_course">
+    RxJava introduction, e.g. DT176G Reactive Programming
+  </label>
+
+
+  <p>Please tick all programming languages / domain specific languages you are
+    experienced with:</p>
+
+  <input type="checkbox" id="basic" name="basic">
+  <label for="basic">BASIC</label>
+
+  <input type="checkbox" id="prolog" name="prolog">
+  <label for="prolog">Prolog</label>
+
+  <input type="checkbox" id="haskell" name="haskell">
+  <label for="haskell">Haskell</label>
+
+  <input type="checkbox" id="java" name="java">
+  <label for="java">Java</label>
+
+  <input type="checkbox" id="sql" name="sql">
+  <label for="sql">SQL</label>
+
+  <input type="checkbox" id="c" name="c">
+  <label for="c">C</label>
+
+  <input type="checkbox" id="cpp" name="cpp">
+  <label for="cpp">C++</label>
+
+  <input type="checkbox" id="cs" name="cs">
+  <label for="cs">C#</label>
+
+  <input type="checkbox" id="python" name="python">
+  <label for="python">Python</label>
+
+  <input type="checkbox" id="javascript" name="javascript">
+  <label for="javascript">JavaScript</label>
+
+  <input type="checkbox" id="assembly" name="assembly">
+  <label for="assembly">Assembly language</label>
+
+  <hr>
+
+
+  <p>How do you assess your Java language knowledge?</p>
+
+  <input type="radio" id="advanced" name="java_knowledge" value="advanced">
+  <label for="advanced">Advanced</label>
+
+  <input type="radio" id="average" name="java_knowledge" value="average">
+  <label for="average">Average</label>
+
+  <input type="radio" id="beginner" name="java_knowledge" value="beginner">
+  <label for="beginner">Beginner</label>
+
+  <input type="radio" id="non_existent" name="java_knowledge"
+    value="non_existent" checked>
+  <label for="non_existent">Non-existent</label>
+
+  <hr>
+
+
+  <p>Do you have any experience in reactive programming?</p>
+
+  <input type="radio" id="frequently" name="reactive_programming_experience"
+    value="frequently">
+  <label for="frequently">Yes, I use it frequently.</label>
+
+  <input type="radio" id="sometimes" name="reactive_programming_experience"
+    value="sometimes">
+  <label for="sometimes">Yes, I use it sometimes.</label>
+
+  <input type="radio" id="heard_of_it" name="reactive_programming_experience"
+    value="heard_of_it">
+  <label for="heard_of_it">No, but I have heard of it.</label>
+
+  <input type="radio" id="what_is_it" name="reactive_programming_experience"
+    value="what_is_it" checked>
+  <label for="what_is_it">What is reactive programming?</label>
+
+  <hr>
+
+
+  <p>How do you assess your RxJava (reactive extensions for Java)
+    knowledge?</p>
+
+  <input type="radio" id="rxjava_advanced" name="rxjava_knowledge"
+    value="rxjava_advanced">
+  <label for="rxjava_advanced">Advanced</label>
+
+  <input type="radio" id="rxjava_average" name="rxjava_knowledge"
+    value="rxjava_average">
+  <label for="rxjava_average">Average</label>
+
+  <input type="radio" id="rxjava_beginner" name="rxjava_knowledge"
+    value="rxjava_beginner">
+  <label for="rxjava_beginner">Beginner</label>
+
+  <input type="radio" id="rxjava_non_existent"
+    name="rxjava_knowledge" value="rxjava_non_existent" checked>
+  <label for="rxjava_non_existent">Non-existent</label>
+
+  <hr>
+
+  <input type="submit" value="SUBMIT" id="submit_button">
+
+</form>
+
+{% endblock content %}

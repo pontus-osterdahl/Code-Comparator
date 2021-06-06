@@ -1,0 +1,19 @@
+try
+{
+  Connection con = createDatabase();
+
+  System.out.println("Before update:\n");
+  printDatabase(con);
+
+  Statement stmt = con.createStatement();
+  stmt.executeUpdate("INSERT INTO STUDENT " +
+  "VALUES (\"Peter\", \"Magnusson\")"); 
+
+  System.out.println("\nAfter update:\n");
+  printDatabase(con);
+
+}
+catch(Exception e)
+{
+  System.err.println("An error occured: " + e.getMessage());
+}

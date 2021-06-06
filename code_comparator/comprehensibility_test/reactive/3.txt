@@ -1,0 +1,10 @@
+Observable.just(FILE_PATH)
+.map(filePath -> new FileReader(filePath))
+.map(fileRead -> new BufferedReader(fileRead))
+.flatMap(bufRead -> Observable.fromIterable(bufRead.lines()::iterator))
+.map(line -> Arrays.asList(line.split("")))
+.flatMap(word -> Observable.fromIterable(word))
+.map(integer -> Integer.valueOf(integer))
+.reduce((x,y) -> x + y)
+.subscribe(System.out::println,
+  error -> System.out.println("Error encountered parsing integers from file."));

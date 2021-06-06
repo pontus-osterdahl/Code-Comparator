@@ -1,0 +1,24 @@
+int a = 1;
+
+System.out.println("Value of a is: " + a);
+
+String string1 = "Hello!";
+String string2 = "Hello world";
+String string3 = "Hello world2";
+
+System.out.println("Value of string is: " + string1);
+
+int array[] = {1, 2, 3};
+
+System.out.println("Value of first element of array is: " + array[0]);
+
+// System.out.println is a method which prints to screen
+
+System.out.println
+  ("System.out.println prints to screen the values passed to it as parameters");
+
+// The method equals returns true if a string is equal to the string passed as
+// argument
+
+System.out.println("That string2 and string3 are equal is: " +
+  string2.equals(string3));

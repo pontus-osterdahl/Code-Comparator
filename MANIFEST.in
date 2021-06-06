@@ -1,0 +1,3 @@
+graft code_comparator/static
+graft code_comparator/templates
+global-exclude *.pyc

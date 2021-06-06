@@ -1,0 +1,24 @@
+String[] array = {"alfa","beta"};
+
+//Map - applies function to each emitted item.
+
+Observable.fromArray(array).
+map(String::toUpperCase).
+subscribe(System.out::println);
+
+//Scan -  a function to each item emitted by an Observable sequentially and emits each successive value.
+
+
+Observable.range(0,5).
+scan((x, y) -> x + y).
+subscribe(System.out::println);
+
+//  apply a function to each item emitted by an Observable, sequentially, and emit the final value
+
+Observable.range(0,5).
+reduce((x, y) -> x + y).
+subscribe(System.out::println);
+
+
+
+

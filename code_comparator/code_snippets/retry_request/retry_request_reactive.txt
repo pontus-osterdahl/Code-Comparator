@@ -1,0 +1,23 @@
+String urlStr = "https://www.google.se";
+
+System.out.println("Requested URL: " + urlStr);
+
+Observable<URLConnection> myObservable = Observable.create(emitter ->
+{
+  System.out.println("Trying...");
+
+  URL url = new URL(urlStr);
+
+  URLConnection urlConn = null;
+
+  urlConn = url.openConnection();
+
+  urlConn.connect();
+
+  emitter.onNext(urlConn);
+});
+      
+myObservable.retry(5).subscribe(c -> System.out.println(c.getURL() +
+  " was called succesfully called"),
+  e -> System.out.println("Could not establish connection"));
+

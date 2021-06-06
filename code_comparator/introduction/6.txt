@@ -1,0 +1,58 @@
+String[] array = {"alfa", "beta", "gamma", "delta"};
+
+Observable<String> observable = Observable.fromArray(array);
+
+// Map applies function to Observable
+System.out.println("map:");
+observable.map(String::toUpperCase).subscribe(System.out::println);
+
+System.out.println();
+
+// Scan -  applies a function to each item emitted by an Observable
+// sequentially and passes on all successive value.
+System.out.println("scan:");
+observable.scan((x, y) -> x + y)
+.subscribe(System.out::println);
+
+System.out.println();
+
+// Flatmap 
+System.out.println("flatMap:");
+observable.flatMap(s ->
+{
+  s = s + "appended String";
+
+  return Observable.just(s);
+
+})
+.subscribe(System.out::println);
+
+System.out.println();
+
+// Reduce -  applies a function to each item emitted by an Observable
+// sequentially but passes on only last value.
+System.out.println("reduce:");
+observable.reduce((x, y) -> x + y)
+.subscribe(System.out::println);
+
+System.out.println();
+
+// Filter - emits items which are not equal to gamma
+System.out.println("filter:");
+observable.filter(x -> !"gamma".equals(x))
+.subscribe(System.out::println);
+
+System.out.println();
+
+// Stream with chained operators
+System.out.println("chained operators:");
+observable.filter(x -> !"gamma".equals(x))
+.map(String::toUpperCase)
+.reduce((x,y) -> x + y)
+.subscribe(System.out::println);
+
+
+
+
+
+

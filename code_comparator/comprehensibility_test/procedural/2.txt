@@ -1,0 +1,25 @@
+int requestsLeft = 5;
+URLConnection urlConn = null;
+URL url = null;
+
+while(requestsLeft == 0)
+{
+  try
+  {
+    System.out.println("Requesting URL: " + URL_STRING);
+    url = new URL(URL_STRING); 
+    urlConn = url.openConnection();
+    urlConn.connect();
+    System.out.println(urlConn.getURL() + " was succesfully called ");
+  }
+
+  catch(Exception e)
+  {
+    requestsLeft--;
+  }
+}
+
+if(requestsLeft == 0)
+{
+  System.out.println(URL_STRING + " could not be called");
+}
