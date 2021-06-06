@@ -8,7 +8,7 @@ Prerequisites
 
 Running
 -------
-1. Make `Code Comparator` the current directory.
+1. Make the directory containing this readme file the current directory.
 
 2. Create a virtual environment in the project directory: `python3 -m venv venv` (Windows: `py -3 -m venv venv`)
 
