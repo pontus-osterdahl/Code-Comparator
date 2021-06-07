@@ -1,3 +1,0 @@
-List<Integer> array = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-System.out.println("Sum of array is " + array.stream().mapToInt(e -> e).sum());
