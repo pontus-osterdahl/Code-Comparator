@@ -14,9 +14,9 @@ Running
 
 3. Activate the virtual environment: `. venv/bin/activate` (Windows: `venv\Scripts\activate`)
 
-4. Install Flask: `pip install Flask`
+4. Install Flask: `pip3 install Flask`
 
-5. Install Markdown: `pip install markdown`
+5. Install Markdown: `pip3 install markdown`
 
 6. Set environment variables: `export FLASK_APP=code_comparator`, `export FLASK_ENV=development` (Windows: `set FLASK_APP=code_comparator`, `set FLASK_ENV=development`)
 
