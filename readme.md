@@ -1,6 +1,10 @@
 Code Comparator
 ===============
 
+About
+-----
+This tool measures the time needed to correct errors in Java code snippets, as a way of determining code comprehensibility. The code snippets are implemented according to one of two paradigms; procedural or reactive. When started, the user is presented with a survey form, followed by an eight part introduction to Java and RxJava. The comprehensibility test can be started from the introduction at the user's discretion.
+
 Prerequisites
 -------------
 * Python, at least version 3.8.
@@ -25,6 +29,9 @@ Running
 8. Start Flask: `flask run`
 
 9. Go to `http://127.0.0.1:5000` in your web browser.
+
+Using
+-----
 
 External projects
 -----------------
