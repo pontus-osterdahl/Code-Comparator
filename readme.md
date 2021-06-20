@@ -30,8 +30,9 @@ Running
 
 9. Go to `http://127.0.0.1:5000` in your web browser.
 
-Using
------
+Customizing
+-----------
+The survey content is in code_comparator/templates/survey_handler/survey.html and the logic is in code_comparator/survey_handler.py. Each introduction part consists of information in a markdown file and code examples in a text file. The introduction files are in code_comparator/introduction.
 
 External projects
 -----------------
