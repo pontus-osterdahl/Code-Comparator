@@ -25,3 +25,18 @@ Running
 8. Start Flask: `flask run`
 
 9. Go to `http://127.0.0.1:5000` in your web browser.
+
+External projects
+-----------------
+This project uses the following external OSS projects:
+
+* **Flask**, a lightweight WSGI web application framework.
+https://github.com/pallets/flask
+
+* **RxJava**, reactive Extensions for the JVM.
+https://github.com/ReactiveX/RxJava/tree/2.x
+
+* **Ace**, a standalone code editor written in JavaScript.
+https://github.com/ajaxorg/ace
+
+
