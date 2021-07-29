@@ -18,15 +18,7 @@ import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
 import java.net.URLConnection;
 import java.net.URL;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import org.davidmoten.rx.jdbc.Database;
-import org.davidmoten.rx.pool.Pool;
-import org.davidmoten.rx.jdbc.pool.Pools;
 
-import io.vavr.control.Try;
 
 class DemoThread extends Thread {
   public void run()
@@ -307,43 +299,9 @@ public static void printArrayList(List<ArrayList<Integer>> array)
     return sum;
   }
   
-  private static Connection createDatabase() throws Exception 
-  {
-    Connection con = null;    
-    Class.forName("org.sqlite.JDBC");
-    con = DriverManager.getConnection("jdbc:sqlite:C:/sqlite/db/Gutnic.db");
-    
-    if (con != null) 
-    {
-    
-      Statement stmt = con.createStatement();
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS PERSON (name varchar(50) PRIMARY KEY, score integer, date_of_birth date, registered timestamp)");
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ADDRESS (address_id integer PRIMARY KEY, full_address varchar(255) NOT NULL);");
-      stmt.executeUpdate("INSERT INTO PERSON (name,score) values (\"FRED\",21)");
-      stmt.executeUpdate("INSERT INTO PERSON (name,score) values(\"JOSEPH\",34)");
-      stmt.executeUpdate("INSERT INTO PERSON (name,score) values(\"MARMADUKE\",25)");
+  
 
-      stmt.executeUpdate("INSERT INTO ADDRESS (ADDRESS_ID, FULL_ADDRESS) values(1,\"57 Something St, El Barrio, Big Place\")");
-      stmt.executeUpdate("INSERT INTO ADDRESS (ADDRESS_ID, FULL_ADDRESS) values(2,\"103 Bumblebee Ave, Jumpdown, Townie\")");
 
-    }
-	
-    return con;
-}
-
-private static void printDatabase(Connection con) throws Exception
-{
-  Statement stmt = con.createStatement();
-  ResultSet result = stmt.executeQuery("SELECT * FROM PERSON");
-  while(result.next())
-  {
-    String name = result.getString("name");
-    int score = result.getInt("score");
-    System.out.println("NAME: " + name + " SCORE: " + score);
-  }
-  result.close();
-  stmt.close();
-}
 
 static final ArrayList<ArrayList<Integer>> MATRIX = getArray();
 static final ArrayList<ArrayList<Integer>> MATRIX_A = getArray();
